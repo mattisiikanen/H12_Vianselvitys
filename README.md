@@ -49,7 +49,7 @@ Tässä tehtävässä aloitin siirtämällä yritysoy-kansion käyttäjän matti
 ![Kuva9](https://user-images.githubusercontent.com/122887740/222915617-70214f46-25ff-410e-a6fa-798bf99adcfa.png)</br>
 
 Nyt tuli uudenlaista virheilmoitusta, sitten vielä tarkistamaan lokit sekä korjaamaan tilanne. </br>
-![Kuva10](https://user-images.githubusercontent.com/122887740/222915728-bba5a0d3-fd2a-48b2-804f-36af39adaae4.png)</br>
+![Kuva10](https://user-images.githubusercontent.com/122887740/222929264-f4c55598-729c-4999-b607-b467d400d839.png)</br>
 
 Kuvan lokin perusteella, client on hylätty server configurationin puolesta. Oli aika palauttaa konfiguraatio jälleen normaaliksi.
 Etsiessäni tahalteen siirrettyä tiedostoa, huomasin vahingossa siirtäneeni sen juureen ja se oli uudella nimellä /mattis. Tilanne palautui, kun siirsin kansion takaisin omalle paikalleen.
