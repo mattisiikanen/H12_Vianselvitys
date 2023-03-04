@@ -52,11 +52,16 @@ Nyt tuli uudenlaista virheilmoitusta, sitten vielä tarkistamaan lokit sekä kor
 ![Kuva10](https://user-images.githubusercontent.com/122887740/222929264-f4c55598-729c-4999-b607-b467d400d839.png)</br>
 
 Kuvan lokin perusteella, client on hylätty server configurationin puolesta. Oli aika palauttaa konfiguraatio jälleen normaaliksi.
-Etsiessäni tahalteen siirrettyä tiedostoa, huomasin vahingossa siirtäneeni sen juureen ja se oli uudella nimellä /mattis. Tilanne palautui, kun siirsin kansion takaisin omalle paikalleen.
+Etsiessäni tahalteen siirrettyä tiedostoa, huomasin vahingossa siirtäneeni sen juureen ja se oli uudella nimellä /mattis. Tilanne palautui, kun siirsin kansion takaisin omalle paikalleen.</br>
 
+Ja vielä lopuksi serverin käynnistys, jonka yhteydessä on system checkit: </br>
+![Kuva11](https://user-images.githubusercontent.com/122887740/222929361-69c0bf8d-8b8c-4b3c-b0f5-7cacd967e2ec.png)</br>
 
 
 ### c) Projektikansiolla väärät oikeudet ('chmod ugo-rwx teroco/', 'chmod u+rx teroco/')
+
+
+
 ### d) Kirjoitusvirhe Apachen asetustiedostossa (/etc/apache2/sites-available/terokarvinen.conf tms)
 ### e) Apachen WSGI-moduli puuttuu ('sudo apt-get purge libapache2-mod-wsgi-py3' tms)
 ### f) Väärät domain-nimet ALLOWED_HOSTS-kohdassa (settings.py, ja DEBUG=False)
@@ -66,4 +71,4 @@ Etsiessäni tahalteen siirrettyä tiedostoa, huomasin vahingossa siirtäneeni se
 Tämä harjoitus opetti minut konfiguroimaan Djangon tuotantokäyttöön, harjoitteisiin meni tällä erää noin 2,5h.
 
 ## Lähteet:
-Karvinen, Tero, 2022 - Deploy Django 4 - Production Install (https://terokarvinen.com/2022/deploy-django/)
+
