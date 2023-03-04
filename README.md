@@ -44,6 +44,18 @@ Ja vielä testit selaimessa: </br>
 
 
 ### b) Django-projektikansio väärässä paikassa (siis se, jossa on manage.py)
+Tässä tehtävässä aloitin siirtämällä yritysoy-kansion käyttäjän mattis juureen komennolla ```mv yritysoy /mattis```. Tämän jälkeen käynnistin uudelleen Apache2:n komennolla ```sudo systemctl restart apache2``` sekä Djangon oman serverin ``` ./manage.py start server```: </br>
+![Kuva8](https://user-images.githubusercontent.com/122887740/222915571-76902f15-83ef-4669-8eaa-b34201856306.png)</br>
+![Kuva9](https://user-images.githubusercontent.com/122887740/222915617-70214f46-25ff-410e-a6fa-798bf99adcfa.png)</br>
+
+Nyt tuli uudenlaista virheilmoitusta, sitten vielä tarkistamaan lokit sekä korjaamaan tilanne. </br>
+![Kuva10](https://user-images.githubusercontent.com/122887740/222915728-bba5a0d3-fd2a-48b2-804f-36af39adaae4.png)</br>
+
+Kuvan lokin perusteella, client on hylätty server configurationin puolesta. Oli aika palauttaa konfiguraatio jälleen normaaliksi.
+Etsiessäni tahalteen siirrettyä tiedostoa, huomasin vahingossa siirtäneeni sen juureen ja se oli uudella nimellä /mattis. Tilanne palautui, kun siirsin kansion takaisin omalle paikalleen.
+
+
+
 ### c) Projektikansiolla väärät oikeudet ('chmod ugo-rwx teroco/', 'chmod u+rx teroco/')
 ### d) Kirjoitusvirhe Apachen asetustiedostossa (/etc/apache2/sites-available/terokarvinen.conf tms)
 ### e) Apachen WSGI-moduli puuttuu ('sudo apt-get purge libapache2-mod-wsgi-py3' tms)
