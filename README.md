@@ -34,7 +34,7 @@ Käynnistin vielä erikseen Apachen palvelimen uudelleen ja testasin mennä webs
 
 Jotain on selvästi rikki. Ei kun selvittämään lokeista: </br>
 
-![Kuva5](https://user-images.githubusercontent.com/122887740/222897018-3a01608e-f242-499b-aefc-fdfc60b95d70.png)
+![Kuva5](https://user-images.githubusercontent.com/122887740/222897018-3a01608e-f242-499b-aefc-fdfc60b95d70.png)</br>
 Lokit ilmoittaa, ettei järjestelmä löydä ```dango``` nimistä modulia. Lopulta päätin vielä korjata tilanteen korjaamalla kirjoitusvirheen, käynnistämällä Apache2:n palvelimen ja ajamalla configtestin: </br>
 ![Kuva6](https://user-images.githubusercontent.com/122887740/222897137-78bf171c-2ea6-4854-90c8-391f07fd072d.png)</br>
 
