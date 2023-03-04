@@ -59,10 +59,46 @@ Ja vielä lopuksi serverin käynnistys, jonka yhteydessä on system checkit: </b
 
 
 ### c) Projektikansiolla väärät oikeudet ('chmod ugo-rwx teroco/', 'chmod u+rx teroco/')
+Seuraavaksi minun tuli testata poistaa oikeuksia yritysoy-kansiosta komennolla: ```chmod ugo-rwx yritysoy/```, jonka jälkeen koitin ```cd yritysoy```:</br>
+![Kuva12](https://user-images.githubusercontent.com/122887740/222930671-ba5a88c8-7e72-4dd7-beae-f2cf96dede6a.png)
 
+Testasin myös käynnistää Djangon: </br>
+![Kuva13](https://user-images.githubusercontent.com/122887740/222930722-575ba277-ae04-4942-a3f7-dab96c38d7b0.png) </br>
+
+ja lopulta sivuja: </br>
+![Kuva14](https://user-images.githubusercontent.com/122887740/222930746-70c8e622-3528-4572-968f-94f4996cd1a5.png) </br>
+Sehän on RIKKI!, ei kun katsomaan lokeja:</br>
+![Kuva15](https://user-images.githubusercontent.com/122887740/222930785-0fdd42a4-c4ee-4893-b5d9-49c52b46aa3d.png) </br>
+Lokien perusteella Apachella ei ole oikeuksia käynnistää kansiossa olevia sivustoja. Nyt oli aika palauttaa tilanne ja aloitinkin sen komennolla ```chmod ugo+rwx yritysoy/```. Oikeuksien lisäyksen jälkeen palvelin lähti hyvin käyntiin: </br>
+![Kuva16](https://user-images.githubusercontent.com/122887740/222930923-e3e0bf8f-aaa3-44c9-955a-dab444930931.png) </br>
+
+ja vielä lokien tarkistus: </br>
+![Kuva17](https://user-images.githubusercontent.com/122887740/222930932-9dca763a-2637-4969-8134-d53f063696fb.png)
+
+Kaikki toimii ja tilanne palautettu. Aika siirtyä seuraavaan harjoitukseen.
 
 
 ### d) Kirjoitusvirhe Apachen asetustiedostossa (/etc/apache2/sites-available/terokarvinen.conf tms)
+Tässä harjoitteessa oli tarkoituksena rikkoa Apacheen syötetty asetustiedosto:</br>
+![Kuva18](https://user-images.githubusercontent.com/122887740/222931085-6d14b636-ac58-48b7-8330-4deec0f2b75b.png)</br>
+Syötin tiedostoon liikakirjaimia, kuten kuvasta näkee.
+
+
+Seuraavaksi käynnistin uudelleen Apachen palvelut ja testasin sivuston toimintaa:</br>
+![Kuva19](https://user-images.githubusercontent.com/122887740/222931100-51b76fa4-f860-485b-b8af-c6fe6a05c64c.png)</br>
+Rikkihän se oli.
+
+
+Ja nyt katsomaan lokeja:</br>
+![Kuva20](https://user-images.githubusercontent.com/122887740/222931152-7d59a2a4-56e0-45d8-931b-7ee5f26660b8.png)</br>
+Lokeista huomaa, että client on jälleen hylätty serverin määritteistä. Nyt olikin taas aika palauttaa tilanne normaaliksi.
+
+
+Muutin Apachen määritetiedoston vielä takaisin ja käynnistin onnistuneesti palvelut: </br>
+![Kuva21](https://user-images.githubusercontent.com/122887740/222931300-f4235715-38ad-48aa-8808-cc2974ffb0ed.png) </br>
+![Kuva22](https://user-images.githubusercontent.com/122887740/222931303-e5915f1a-8c35-4081-86ff-0262cf8181f2.png) </br>
+
+
 ### e) Apachen WSGI-moduli puuttuu ('sudo apt-get purge libapache2-mod-wsgi-py3' tms)
 ### f) Väärät domain-nimet ALLOWED_HOSTS-kohdassa (settings.py, ja DEBUG=False)
 
