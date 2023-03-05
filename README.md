@@ -42,8 +42,11 @@ Ja vielä testit selaimessa: </br>
 ![Kuva7](https://user-images.githubusercontent.com/122887740/222897190-a9e508d3-8465-4468-805e-e3ec5198fe1a.png)</br>
 
 
+Testit jatkuvat myöhemmin.
 
-### b) Django-projektikansio väärässä paikassa (siis se, jossa on manage.py)
+
+### b) Django-projektikansio väärässä paikassa (siis se, jossa on manage.py) 
+Klo 17:45 </br>
 Tässä tehtävässä aloitin siirtämällä yritysoy-kansion käyttäjän mattis juureen komennolla ```mv yritysoy /mattis```. Tämän jälkeen käynnistin uudelleen Apache2:n komennolla ```sudo systemctl restart apache2``` sekä Djangon oman serverin ``` ./manage.py start server```: </br>
 ![Kuva8](https://user-images.githubusercontent.com/122887740/222915571-76902f15-83ef-4669-8eaa-b34201856306.png)</br>
 ![Kuva9](https://user-images.githubusercontent.com/122887740/222915617-70214f46-25ff-410e-a6fa-798bf99adcfa.png)</br>
@@ -58,7 +61,11 @@ Ja vielä lopuksi serverin käynnistys, jonka yhteydessä on system checkit: </b
 ![Kuva11](https://user-images.githubusercontent.com/122887740/222929361-69c0bf8d-8b8c-4b3c-b0f5-7cacd967e2ec.png)</br>
 
 
+Jälleen jatketaan myöhemmin.
+
+
 ### c) Projektikansiolla väärät oikeudet ('chmod ugo-rwx teroco/', 'chmod u+rx teroco/')
+SU 5.3.2023 Klo 0:04 </br>
 Seuraavaksi minun tuli testata poistaa oikeuksia yritysoy-kansiosta komennolla: ```chmod ugo-rwx yritysoy/```, jonka jälkeen koitin ```cd yritysoy```:</br>
 ![Kuva12](https://user-images.githubusercontent.com/122887740/222930671-ba5a88c8-7e72-4dd7-beae-f2cf96dede6a.png)
 
@@ -79,6 +86,7 @@ Kaikki toimii ja tilanne palautettu. Aika siirtyä seuraavaan harjoitukseen.
 
 
 ### d) Kirjoitusvirhe Apachen asetustiedostossa (/etc/apache2/sites-available/terokarvinen.conf tms)
+Klo 0:15 </br>
 Tässä harjoitteessa oli tarkoituksena rikkoa Apacheen syötetty asetustiedosto:</br>
 ![Kuva18](https://user-images.githubusercontent.com/122887740/222931085-6d14b636-ac58-48b7-8330-4deec0f2b75b.png)</br>
 Syötin tiedostoon liikakirjaimia, kuten kuvasta näkee.
@@ -100,11 +108,48 @@ Muutin Apachen määritetiedoston vielä takaisin ja käynnistin onnistuneesti p
 
 
 ### e) Apachen WSGI-moduli puuttuu ('sudo apt-get purge libapache2-mod-wsgi-py3' tms)
+Klo 10:03 </br>
+Nyt oli vuorossa poistaa WSGI-moduli ja tarkistaa, miten Django toimii sen jälkeen. Ajoin komennon ```sudo apt-get purge libapache2-mod-wsgi-py3```
+Poiston lomassa Apache yritti käynnistää jo itseään uudelleen ja alkoikin heti ilmoittamaan virheistä:</br>
+![Kuva23](https://user-images.githubusercontent.com/122887740/222949106-8deb4c83-3706-48e5-ba80-15a63ac2aad8.png)</br>
+
+
+Koitin vielä käynnistää itse Apachen palvelut:</br>
+![Kuva24](https://user-images.githubusercontent.com/122887740/222949162-2aa59e85-5363-48bd-8acd-f2c9035b7841.png)</br>
+
+
+Kävin vielä koittamassa websivua:</br>
+![Kuva25](https://user-images.githubusercontent.com/122887740/222949250-27bf1db7-7856-4b42-a648-42722054a2e2.png)</br>
+
+Ei toimi. Oli aika siirtyä tarkistamaan vielä lokit: </br>
+![Kuva26](https://user-images.githubusercontent.com/122887740/222949339-cf6b4aba-4590-4257-8af0-824d2450cd17.png)</br>
+Ainoastaan yksi rivi oli generoitunut.
+
+Testien ja tutkimusten jälkeen oli aika palauttaa tilanne takaisin normaaliksi komennolla ```sudo apt-get install libapache2-mod-wsgi-py3``` ja asennuksen jälkeen koitin käynnistää Apachen uudelleen, tällä kertaa ei tullut virheilmoituksia ja websivukin toimi normaalisti: </br>
+![Kuva27](https://user-images.githubusercontent.com/122887740/222949529-d5673e7b-892a-4644-96f0-c10ebd30ee67.png)</br>
+
+
 ### f) Väärät domain-nimet ALLOWED_HOSTS-kohdassa (settings.py, ja DEBUG=False)
+Klo 10:16 </br>
+Viimeisenä harjoitteena oli tarkoitus rikkoa settings.py tiedosto muuttamalla määritteet vääriksi. Aloitin käynnistämällä microlla settings.py tiedoston ja muokkaamalla kohtaa:</br>
+```
+ALLOWED_HOSTS = ["localhost"] -> ALLOWED_HOSTS = ["localhos","ehkäei"]
+```
+Tallensin konfiguraation, käynnistin Apachen palvelut uudelleen ja lähdin testaamaan webselaimella:</br>
+![Kuva28](https://user-images.githubusercontent.com/122887740/222949720-1f2200ad-9137-41f8-bb77-ba4e41221481.png)</br>
+
+
+Rikkihän se oli. Oli aika tarkistaa lokit: </br>
+![Kuva29](https://user-images.githubusercontent.com/122887740/222949821-0b24400e-d85d-49a6-943d-112961490a12.png)</br>
+
+
+Lokeissa ei ollut mitään merkintää, koska Apachen mielestä kaikki toimii moitteetta. Apachen toimintaan ei näytä vaikuttava ALLOWED_HOSTS kohta lainkaan. Joka tapauksessa, nyt oli vielä tarkoitus palauttaa tilanne normaaliksi vaihtamalla määritteet takaisin sekä testata jälleen toiminta: </br>
+
+![Kuva30](https://user-images.githubusercontent.com/122887740/222949952-c8908a13-a985-422a-909c-5ed74a8aa052.png)
 
 
 ## Lopetus
-Tämä harjoitus opetti minut konfiguroimaan Djangon tuotantokäyttöön, harjoitteisiin meni tällä erää noin 2,5h.
+Tämä harjoitus opetti paljon erilaisista virhetilanteista sekä vianmäärityksestä kokonaisuudessaan, harjoitteisiin meni tällä erää noin 2,5h.
 
 ## Lähteet:
 
