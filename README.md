@@ -161,4 +161,4 @@ Lokeissa ei ollut mitään merkintää, koska Apachen mielestä kaikki toimii mo
 Tämä harjoitus opetti paljon erilaisista virhetilanteista sekä vianmäärityksestä kokonaisuudessaan, harjoitteisiin meni tällä erää noin 2,5h.
 
 ## Lähteet:
-
+Karvinen Tero, 2023 - Linux Palvelimet 2023 alkukevät (https://terokarvinen.com/2023/linux-palvelimet-2023-alkukevat/)
