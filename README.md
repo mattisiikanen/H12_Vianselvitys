@@ -134,7 +134,7 @@ Ei toimi. Oli aika siirtyä tarkistamaan vielä lokit: </br>
 ![Kuva26](https://user-images.githubusercontent.com/122887740/222949339-cf6b4aba-4590-4257-8af0-824d2450cd17.png)</br>
 Ainoastaan yksi rivi oli generoitunut.
 
-Testien ja tutkimusten jälkeen oli aika palauttaa tilanne takaisin normaaliksi komennolla ```sudo apt-get install libapache2-mod-wsgi-py3``` ja asennuksen jälkeen koitin käynnistää Apachen uudelleen, tällä kertaa ei tullut virheilmoituksia ja websivukin toimi normaalisti: </br>
+Testien ja tutkimusten jälkeen oli aika palauttaa tilanne takaisin normaaliksi komennolla ```sudo apt-get install libapache2-mod-wsgi-py3```, jonka jälkeen koitin käynnistää Apachen uudelleen, tällä kertaa ei tullut virheilmoituksia ja websivukin toimi normaalisti: </br>
 ![Kuva27](https://user-images.githubusercontent.com/122887740/222949529-d5673e7b-892a-4644-96f0-c10ebd30ee67.png)</br>
 
 
