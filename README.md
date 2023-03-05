@@ -72,11 +72,20 @@ Seuraavaksi minun tuli testata poistaa oikeuksia yritysoy-kansiosta komennolla: 
 Testasin myös käynnistää Djangon: </br>
 ![Kuva13](https://user-images.githubusercontent.com/122887740/222930722-575ba277-ae04-4942-a3f7-dab96c38d7b0.png) </br>
 
+
 ja lopulta sivuja: </br>
+
+
 ![Kuva14](https://user-images.githubusercontent.com/122887740/222930746-70c8e622-3528-4572-968f-94f4996cd1a5.png) </br>
+
+
 Sehän on RIKKI!, ei kun katsomaan lokeja:</br>
 ![Kuva15](https://user-images.githubusercontent.com/122887740/222930785-0fdd42a4-c4ee-4893-b5d9-49c52b46aa3d.png) </br>
+
+
 Lokien perusteella Apachella ei ole oikeuksia käynnistää kansiossa olevia sivustoja. Nyt oli aika palauttaa tilanne ja aloitinkin sen komennolla ```chmod ugo+rwx yritysoy/```. Oikeuksien lisäyksen jälkeen palvelin lähti hyvin käyntiin: </br>
+
+
 ![Kuva16](https://user-images.githubusercontent.com/122887740/222930923-e3e0bf8f-aaa3-44c9-955a-dab444930931.png) </br>
 
 ja vielä lokien tarkistus: </br>
