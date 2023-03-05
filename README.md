@@ -118,8 +118,8 @@ Muutin Apachen määritetiedoston vielä takaisin ja käynnistin onnistuneesti p
 
 ### e) Apachen WSGI-moduli puuttuu ('sudo apt-get purge libapache2-mod-wsgi-py3' tms)
 Klo 10:03 </br>
-Nyt oli vuorossa poistaa WSGI-moduli ja tarkistaa, miten Django toimii sen jälkeen. Ajoin komennon ```sudo apt-get purge libapache2-mod-wsgi-py3```
-Poiston lomassa Apache yritti käynnistää jo itseään uudelleen ja alkoikin heti ilmoittamaan virheistä:</br>
+Nyt oli vuorossa poistaa WSGI-moduli ja tarkistaa, miten Django toimii sen jälkeen. Ajoin komennon ```sudo apt-get purge libapache2-mod-wsgi-py3```,
+poiston lomassa Apache yritti käynnistää jo itseään uudelleen ja alkoikin heti ilmoittamaan virheistä:</br>
 ![Kuva23](https://user-images.githubusercontent.com/122887740/222949106-8deb4c83-3706-48e5-ba80-15a63ac2aad8.png)</br>
 
 
