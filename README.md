@@ -25,7 +25,7 @@ Aloitin työt 4.3.2023 klo 12:49 käynnistämällä virtuaalikoneen ja kirjautum
 Otin uhriksi settings.py tiedoston, johon kävin tekemässä kirjoitusvirheen muuttamalla INSTALLED_APPS kohtaa:</br>
 ![Kuva2](https://user-images.githubusercontent.com/122887740/222896586-b2d714c6-236a-434f-b847-7bb22bc93bd1.png)</br>
 
-Vaihdoin arvoksi ```'dango.contrib.admin'```, heti tallennettuani tiedosto, rupesi Djangon palvelin valittamaan virheistä: </br>
+Vaihdoin arvoksi ```'dango.contrib.admin'```, heti tallennettuani tiedoston, rupesi Djangon palvelin valittamaan virheistä: </br>
 ![Kuva3](https://user-images.githubusercontent.com/122887740/222896667-90a0906a-6199-4c3f-ba39-4d0292127954.png)</br>
 
 Käynnistin vielä erikseen Apachen palvelimen uudelleen ja testasin mennä webselaimella Djangon hallintaan: </br>
